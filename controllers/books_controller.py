@@ -7,3 +7,13 @@ from models.author import Author
 from flask import Blueprint
 
 books_blueprint = Blueprint("book", __name__)
+
+@books_blueprint.route("/books")
+def all_books():
+    books=book_repository.select_all()
+    return render_template("books/index.html",books=books)
+
+@books_blueprint.route("/books/new")
+def new_task():
+    authors=author_repository.select_all()
+    return render_template("books/new.html",authors=authors)
