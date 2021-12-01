@@ -1,9 +1,8 @@
 class Author:
 
-    def __init__(self, name, title, books, id = None):
+    def __init__(self, name, title, id = None):
         self.name = name
         self.title = title
-        self.books = books
         self.id = id
 
 
